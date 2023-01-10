@@ -9,7 +9,7 @@ import {
 const getAllCustomers: GetAllCustomers = async (localToken, sessionToken) => {
   try {
     if (localToken) {
-      const res = await axios.get("http://localhost:3001/customer", {
+      const res = await axios.get("https://sharenergy-server-production.up.railway.app/customer", {
         headers: {
           Authorization: `Bearer ${localToken}`,
         },
@@ -19,7 +19,7 @@ const getAllCustomers: GetAllCustomers = async (localToken, sessionToken) => {
         return res;
       }
     } else {
-      const res = await axios.get("http://localhost:3001/customer", {
+      const res = await axios.get("https://sharenergy-server-production.up.railway.app/customer", {
         headers: {
           Authorization: `Bearer ${sessionToken}`,
         },
@@ -46,7 +46,7 @@ const createCustomer: CreateCustomer = async (
   try {
     if (localToken) {
       const res = await axios.post(
-        "http://localhost:3001/customer",
+        "https://sharenergy-server-production.up.railway.app/customer",
         {
           name,
           email,
@@ -63,7 +63,7 @@ const createCustomer: CreateCustomer = async (
       return res;
     } else {
       const res = await axios.post(
-        "http://localhost:3001/customer",
+        "https://sharenergy-server-production.up.railway.app/customer",
         {
           name,
           email,
@@ -97,7 +97,7 @@ const editCustomer: EditCustomer = async (
   try {
     if (localToken) {
       const res = await axios.patch(
-        `http://localhost:3001/customer/${id}`,
+        `https://sharenergy-server-production.up.railway.app/customer/${id}`,
         {
           name,
           email,
@@ -114,7 +114,7 @@ const editCustomer: EditCustomer = async (
       return res;
     } else {
       const res = await axios.patch(
-        `http://localhost:3001/customer/${id}`,
+        `https://sharenergy-server-production.up.railway.app/customer/${id}`,
         {
           name,
           email,
@@ -138,14 +138,14 @@ const editCustomer: EditCustomer = async (
 const deleteCustomer: DeleteCustomer = async (localToken, sessionToken, id) => {
   try {
     if (localToken) {
-      const res = await axios.delete(`http://localhost:3001/customer/${id}`, {
+      const res = await axios.delete(`https://sharenergy-server-production.up.railway.app/customer/${id}`, {
         headers: {
           Authorization: `Bearer ${localToken}`,
         },
       });
       return res;
     } else {
-      const res = await axios.delete(`http://localhost:3001/customer/${id}`, {
+      const res = await axios.delete(`https://sharenergy-server-production.up.railway.app/customer/${id}`, {
         headers: {
           Authorization: `Bearer ${sessionToken}`,
         },

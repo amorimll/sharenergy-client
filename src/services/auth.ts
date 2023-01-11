@@ -2,7 +2,7 @@ import axios from "axios";
 import { Login, Register } from "../@types/services/auth.type";
 
 const login: Login = async (username, password) => {
-  const res = await axios.post("http://localhost:3001/auth/login", {
+  const res = await axios.post("https://sharenergy-server-production.up.railway.app/auth/login", {
     username,
     password,
   });
@@ -11,7 +11,7 @@ const login: Login = async (username, password) => {
 };
 
 const register: Register = async (username, email, password) => {
-  const res = await axios.post("http://localhost:3001/auth/register", {
+  const res = await axios.post("https://sharenergy-server-production.up.railway.app/auth/register", {
     username,
     email,
     password,
